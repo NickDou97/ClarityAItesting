@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Maturity Assessment</title>
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="css/dist/styles.min.css?v=1.4" as="style">
+  <link rel="preload" href="js/assessment.js" as="script">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/dist/styles.min.css?v=1.4">
+  
+  <!-- Chart.js for Visualization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.min.js"></script>
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="AI Maturity Assessment">
+  <meta property="og:description" content="Evaluate your organization's AI maturity across 6 key dimensions and get personalized recommendations.">
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta property="og:url" content="https://example.com/ai-assessment">
+  
+  <!-- Structured data for rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AI Maturity Assessment Tool",
+    "applicationCategory": "BusinessApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "143"
+    }
+  }
+  </script>
+  
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="logo" role="heading" aria-level="1">
+                <a href="index.html" aria-label="ClarityAI Homepage">
+                    <span>Clarity<span class="highlight">AI</span></span>
+                </a>
+            </div>
+            <div class="nav-links" role="list">
+                <a href="index.html#problem" role="listitem">The Problem</a>
+                <a href="index.html#solution" role="listitem">The Solution</a>
+                <a href="index.html#results" role="listitem">Results</a>
+                <a href="index.html#solutions" role="listitem">Solutions</a>
+            </div>
+            <a href="index.html#contact" class="nav-cta" role="button">Book a Strategy Call</a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero bg-gradient">
+    <div class="container">
+      <div class="hero-content">
+        <h1>AI Maturity Assessment</h1>
+        <p class="hero-subtitle">Evaluate your organization's AI maturity across 6 key dimensions and get personalized recommendations.</p>
+        <div class="hero-cta">
+          <a href="#assessment-form" class="btn btn-primary">Start Assessment</a>
+          <button id="start-tour" class="btn btn-secondary">
+            <i class="fas fa-info-circle"></i> How It Works
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="hero-shape">
+      <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,160 C320,200 420,100 720,120 C1020,140 1200,80 1440,160 L1440,200 L0,200 Z" fill="var(--color-background)" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Features Section -->
+    <section class="features section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Assessment Features</h2>
+          <p>Comprehensive analysis of your organization's AI readiness</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Maturity Score</h3>
+            <p>Get a quantitative measure of your organization's AI maturity on a scale of 1 to 5.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-radar"></i>
+            </div>
+            <h3>Dimensional Analysis</h3>
+            <p>Visualize strengths and areas for improvement across 6 key dimensions.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <h3>Industry Benchmarks</h3>
+            <p>Compare your organization against industry averages to gauge relative performance.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Recommendations</h3>
+            <p>Receive tailored recommendations to advance your AI maturity journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process bg-light section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Assessment Process</h2>
+          <p>Three simple steps to gain insights into your AI maturity</p>
+        </div>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Complete the Assessment</h3>
+              <p>Rate your organization across 6 key dimensions of AI maturity.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Review Your Results</h3>
+              <p>Get your overall maturity score and dimension-specific analysis.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Implement Recommendations</h3>
+              <p>Follow personalized recommendations to improve your AI maturity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assessment Form Section -->
+    <section id="assessment-section" class="assessment section-padding">
+      <div class="container">
+        <div class="section-header text-center assessment-intro">
+          <h2>Start Your Assessment</h2>
+          <p>Rate your organization's capabilities across the six dimensions of AI maturity</p>
+        </div>
+        
+        <!-- Progress Indicator for Multi-step Form -->
+        <div class="progress-container">
+          <div class="progress-steps">
+            <div class="progress-step active" data-step="1">
+              <div class="step-number">1</div>
+              <div class="step-label">Organization Info</div>
+            </div>
+            <div class="progress-step" data-step="2">
+              <div class="step-number">2</div>
+              <div class="step-label">Dimensions 1-3</div>
+            </div>
+            <div class="progress-step" data-step="3">
+              <div class="step-number">3</div>
+              <div class="step-label">Dimensions 4-6</div>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-inner"></div>
+          </div>
+        </div>
+        
+        <!-- Assessment Form -->
+        <form id="assessment-form" class="assessment-form card" action="/success?form-name=assessment-results" method="post" data-netlify="true" name="assessment-results" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="assessment-results">
+          <p style="display: none">
+              <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <!-- Step 1: Organization Info -->
+          <div class="form-step active">
+            <h3>Organization Information</h3>
+            <p class="form-intro">Provide some basic information about your organization to help us tailor results.</p>
+            
+            <div class="form-group">
+              <label for="assessment_name">Assessment Name (Optional)</label>
+              <input type="text" id="assessment_name" name="assessment_name" placeholder="e.g., Q3 2023 Assessment">
+            </div>
+            
+            <div class="form-group">
+              <label for="industry">Industry</label>
+              <select id="industry" name="industry" required>
+                <option value="technology">Technology</option>
+                <option value="financial">Financial Services</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="retail">Retail</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="education">Education</option>
+                <option value="government">Government</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-primary next-step">Continue to Assessment</button>
+            </div>
+          </div>
+          
+          <!-- Step 2: Dimensions 1-3 -->
+          <div class="form-step">
+            <h3>AI Maturity Dimensions (1/2)</h3>
+            <p class="form-intro">Rate your organization's capabilities in each dimension from 1 (Initial) to 5 (Leading).</p>
+            
+            <!-- Strategy Dimension -->
+            <div class="dimension-group">
+              <div class="dimension-header">
+                <i class="fas fa-lightbulb dimension-icon"></i>
+                <h4>Strategy</h4>
+                <div class="tooltip-trigger" data-tooltip="Alignment of AI initiatives with business goals and leadership support">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <div class="slider-container">
+                <input type="range" min="1" max="5" value="1" class="slider" data-dimension="strategy">
+                <div class="slider-labels">
+                  <span>Initial</span>
+                  <span>Developing</span>
+                  <span>Defined</span>
+                  <span>Advanced</span>
+                  <span>Leading</span>
+                </div>
+                <div class="slider-value">1</div>
+                <input type="hidden" name="strategy" value="1">
+              </div>
+            </div>
+            
+            <!-- Data Dimension -->
+            <div class="dimension-group">
+              <div class="dimension-header">
+                <i class="fas fa-database dimension-icon"></i>
+                <h4>Data</h4>
+                <div class="tooltip-trigger" data-tooltip="Data quality, accessibility, governance and management practices">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <div class="slider-container">
+                <input type="range" min="1" max="5" value="1" class="slider" data-dimension="data">
+                <div class="slider-labels">
+                  <span>Initial</span>
+                  <span>Developing</span>
+                  <span>Defined</span>
+                  <span>Advanced</span>
+                  <span>Leading</span>
+                </div>
+                <div class="slider-value">1</div>
+                <input type="hidden" name="data" value="1">
+              </div>
+            </div>
+            
+            <!-- Technology Dimension -->
+            <div class="dimension-group">
+              <div class="dimension-header">
+                <i class="fas fa-microchip dimension-icon"></i>
+                <h4>Technology</h4>
+                <div class="tooltip-trigger" data-tooltip="AI tools, infrastructure, and technical capabilities">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <div class="slider-container">
+                <input type="range" min="1" max="5" value="1" class="slider" data-dimension="technology">
+                <div class="slider-labels">
+                  <span>Initial</span>
+                  <span>Developing</span>
+                  <span>Defined</span>
+                  <span>Advanced</span>
+                  <span>Leading</span>
+                </div>
+                <div class="slider-value">1</div>
+                <input type="hidden" name="technology" value="1">
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline prev-step">Back</button>
+              <button type="button" class="btn btn-primary next-step">Continue</button>
+            </div>
+          </div>
+          
+          <!-- Step 3: Dimensions 4-6 -->
+          <div class="form-step">
+            <h3>AI Maturity Dimensions (2/2)</h3>
+            <p class="form-intro">Rate your organization's capabilities in each dimension from 1 (Initial) to 5 (Leading).</p>
+            
+            <!-- Talent Dimension -->
+            <div class="dimension-group">
+              <div class="dimension-header">
+                <i class="fas fa-users dimension-icon"></i>
+                <h4>Talent</h4>
+                <div class="tooltip-trigger" data-tooltip="AI skills, knowledge, and expertise within the organization">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <div class="slider-container">
+                <input type="range" min="1" max="5" value="1" class="slider" data-dimension="talent">
+                <div class="slider-labels">
+                  <span>Initial</span>
+                  <span>Developing</span>
+                  <span>Defined</span>
+                  <span>Advanced</span>
+                  <span>Leading</span>
+                </div>
+                <div class="slider-value">1</div>
+                <input type="hidden" name="talent" value="1">
+              </div>
+            </div>
+            
+            <!-- Operations Dimension -->
+            <div class="dimension-group">
+              <div class="dimension-header">
+                <i class="fas fa-gears dimension-icon"></i>
+                <h4>Operations</h4>
+                <div class="tooltip-trigger" data-tooltip="Implementation of AI in business processes and operations">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <div class="slider-container">
+                <input type="range" min="1" max="5" value="1" class="slider" data-dimension="operations">
+                <div class="slider-labels">
+                  <span>Initial</span>
+                  <span>Developing</span>
+                  <span>Defined</span>
+                  <span>Advanced</span>
+                  <span>Leading</span>
+                </div>
+                <div class="slider-value">1</div>
+                <input type="hidden" name="operations" value="1">
+              </div>
+            </div>
+            
+            <!-- Ethics Dimension -->
+            <div class="dimension-group">
+              <div class="dimension-header">
+                <i class="fas fa-scale-balanced dimension-icon"></i>
+                <h4>Ethics &amp; Governance</h4>
+                <div class="tooltip-trigger" data-tooltip="Responsible AI practices, transparency, and risk management">
+                  <i class="fas fa-info-circle"></i>
+                </div>
+              </div>
+              <div class="slider-container">
+                <input type="range" min="1" max="5" value="1" class="slider" data-dimension="ethics">
+                <div class="slider-labels">
+                  <span>Initial</span>
+                  <span>Developing</span>
+                  <span>Defined</span>
+                  <span>Advanced</span>
+                  <span>Leading</span>
+                </div>
+                <div class="slider-value">1</div>
+                <input type="hidden" name="ethics" value="1">
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline prev-step">Back</button>
+              <button type="submit" class="btn btn-primary">Submit Assessment</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results-section" class="results section-padding bg-gradient hidden">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2>Your Assessment Results</h2>
+          <p>Here's how your organization scores on the AI Maturity Scale</p>
+        </div>
+        
+        <div id="results-container" class="results-container">
+          <!-- Overall Score Card -->
+          <div class="score-card card">
+            <h3 class="assessment-title">AI Maturity Assessment</h3>
+            <div class="score-display">
+              <div class="score-circle">
+                <span class="score-value">0.0</span>
+                <span class="score-label">Overall Score</span>
+              </div>
+            </div>
+            <div class="maturity-level-container">
+              <h4 class="maturity-level">1. Initial</h4>
+              <p class="maturity-description">Limited awareness or ad-hoc implementation of AI capabilities</p>
+            </div>
+          </div>
+          
+          <!-- Radar Chart Card -->
+          <div class="radar-container card">
+            <div class="radar-header">
+              <h3 class="radar-title">Dimension Analysis</h3>
+              <p class="radar-subtitle">Compare your scores with industry benchmarks</p>
+              
+              <!-- Visualization Toggle Button -->
+              <div class="visualization-controls">
+                <button id="chart-toggle" class="toggle-button" aria-pressed="false" aria-label="Switch to bar chart">
+                  <span class="toggle-icon"><i class="fas fa-chart-bar"></i></span>
+                  <span class="toggle-text">Toggle Chart Type</span>
+                </button>
+              </div>
+            </div>
+            
+            <div class="visualization-container">
+              <!-- Radar Chart Canvas -->
+              <div class="radar-canvas-wrapper">
+                <canvas id="radar-chart" height="400"></canvas>
+              </div>
+              
+              <!-- Bar Chart Canvas (hidden by default on desktop) -->
+              <div class="bar-canvas-wrapper">
+                <canvas id="bar-chart" height="400"></canvas>
+              </div>
+            </div>
+            
+            <div class="radar-legend">
+              <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(110, 89, 242, 0.8);"></div>
+                <span>Your Organization</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(255, 155, 80, 0.7);"></div>
+                <span>Industry Benchmark</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Email Capture for Report Download -->
+          <div class="email-capture card">
+            <h3>Get Your Detailed Report</h3>
+            <p>Enter your email to receive a detailed assessment report with actionable insights</p>
+            <form id="email-form" class="email-form" action="/success?form-name=newsletter-signup" method="post" data-netlify="true" name="newsletter-signup" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="newsletter-signup">
+              <p style="display: none">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </p>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-envelope"></i> Send Report
+                </button>
+              </div>
+            </form>
+            <div class="download-options">
+              <button id="download-report" class="btn btn-outline">
+                <i class="fas fa-download"></i> Download Chart
+              </button>
+              <div class="social-share">
+                <span>Share Results:</span>
+                <a href="#" class="social-icon" aria-label="Share on LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Share on Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" aria-label="Share via Email">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Dimension Scores -->
+          <div class="dimensions-container card">
+            <h3>Dimension Scores</h3>
+            <div class="dimensions-list">
+              <!-- Dimension cards will be dynamically added here -->
+            </div>
+          </div>
+          
+          <!-- Recommendations -->
+          <div class="recommendations-container card">
+            <h3>Key Recommendations</h3>
+            <ul class="recommendations-list">
+              <!-- Recommendations will be dynamically added here -->
+            </ul>
+          </div>
+          
+          <!-- Guided Walkthrough Button -->
+          <div class="guided-walkthrough text-center">
+            <button id="open-walkthrough" class="btn btn-secondary">
+              <i class="fas fa-lightbulb"></i> Understand Your Results
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Guided Walkthrough Modal -->
+    <div id="walkthrough-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Understanding Your Assessment Results</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="walkthrough-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Overall Score</h4>
+              <p>Your overall score represents the average maturity across all dimensions, indicating your organization's general AI readiness.</p>
+            </div>
+          </div>
+          <div class="walkthrough-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Dimension Analysis</h4>
+              <p>The radar chart shows your score in each dimension compared to industry benchmarks, helping identify strengths and areas for improvement.</p>
+            </div>
+          </div>
+          <div class="walkthrough-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Recommendations</h4>
+              <p>Based on your scores, we provide tailored recommendations to help you advance to the next maturity level in each dimension.</p>
+            </div>
+          </div>
+          <div class="walkthrough-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Next Steps</h4>
+              <p>Download your report, share with stakeholders, and implement recommendations to improve your AI maturity. Consider reassessing in 6-12 months.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary modal-close">Got It</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span>Clarity<span class="highlight">AI</span></span>
+                        <p>AI-Powered CX Solutions</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter Profile">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <a href="index.html#solutions">Agentic AI</a>
+                        <a href="index.html#solutions">Workflow Automation</a>
+                        <a href="index.html#solutions">Data Intelligence</a>
+                        <a href="index.html#solutions">Lead Generation</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="index.html#founder-story">About Us</a>
+                        <a href="index.html#results">Success Stories</a>
+                        <a href="index.html#faqs">FAQs</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="index.html#newsletter">AI Newsletter</a>
+                        <a href="ai-assessment.html">AI Assessment</a>
+                        <a href="index.html#contact">Implementation Guide</a>
+                        <a href="index.html#contact">CX Strategy Blog</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 ClarityAI. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Scripts with module/nomodule pattern for better browser support -->
+  <script src="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  
+  <!-- Cache Clearing Script -->
+  <script src="js/cache-clear.js"></script>
+  
+  <!-- Module/NoModule pattern for better browser compatibility -->
+  <script type="module" src="js/assessment.js"></script>
+  
+  <!-- Modal functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinksContainer = document.querySelector('.nav-links-container');
+      
+      if (menuBtn && navLinksContainer) {
+        menuBtn.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          this.setAttribute('aria-expanded', !expanded);
+          navLinksContainer.classList.toggle('show');
+          document.body.classList.toggle('menu-open');
+        });
+        
+        // Close menu when a link is clicked
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            menuBtn.setAttribute('aria-expanded', 'false');
+            navLinksContainer.classList.remove('show');
+            document.body.classList.remove('menu-open');
+          });
+        });
+      }
+      
+      // Scroll effect for navbar
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+      
+      // Initialize VisualizationManager for chart toggle functionality
+      const dimensions = ['Strategic Vision', 'Experimentation', 'Scaling Capability', 
+                          'Implementation', 'Technical Expertise', 'Business Value'];
+      
+      const visualizationManager = new VisualizationManager({
+        radarId: 'radar-chart',
+        barId: 'bar-chart',
+        toggleId: 'chart-toggle',
+        dimensions: dimensions,
+        colors: ['rgba(110, 89, 242, 0.8)', 'rgba(255, 155, 80, 0.7)'],
+      });
+      
+      // Set initial data
+      visualizationManager.updateData(
+        [
+          [3.5, 2.8, 4.2, 2.5, 3.0, 3.7], // Sample user data
+          [3.2, 3.0, 3.8, 2.9, 3.2, 3.5]  // Sample benchmark data
+        ]
+      );
+      
+      // Make visualization manager available globally
+      window.visualizationManager = visualizationManager;
+      
+      // Modal functionality
+      const modal = document.getElementById('walkthrough-modal');
+      const openModal = document.getElementById('open-walkthrough');
+      const closeButtons = document.querySelectorAll('.modal-close');
+      
+      // Ensure proper icon color rendering
+      const fixIconColors = () => {
+        document.querySelectorAll('.dimension-icon').forEach(icon => {
+          icon.style.color = 'var(--color-primary)';
+        });
+        
+        document.querySelectorAll('.fa-lightbulb, .fa-chart-line, .fa-chart-radar, .fa-industry').forEach(icon => {
+          icon.style.color = 'var(--color-primary)';
+        });
+      };
+      
+      // Fix any icon color issues
+      fixIconColors();
+      
+      // Initialize download button
+      const downloadBtn = document.getElementById('download-report');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+          const assessmentName = document.getElementById('assessment_name');
+          let filename = 'ai-maturity-assessment';
+          
+          if (assessmentName && assessmentName.value) {
+            filename = assessmentName.value.replace(/[^a-z0-9]/gi, '-').toLowerCase();
+          }
+          
+          // Use visualization manager for export
+          visualizationManager.exportToPNG(filename);
+        });
+      }
+      
+      if (openModal && modal) {
+        openModal.addEventListener('click', function() {
+          modal.classList.remove('hidden');
+          
+          // Analytics tracking
+          if (typeof gtag === 'function') {
+            gtag('event', 'open_walkthrough', {
+              'event_category': 'engagement'
+            });
+          }
+        });
+      }
+      
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          modal.classList.add('hidden');
+        });
+      });
+      
+      // Email form submission
+      const emailForm = document.getElementById('email-form');
+      if (emailForm) {
+        emailForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const email = document.getElementById('email').value;
+          
+          // Mock email submission - would be replaced with actual API call
+          setTimeout(() => {
+            alert(`Report sent to ${email}. Check your inbox!`);
+            emailForm.reset();
+            
+            // Analytics tracking
+            if (typeof gtag === 'function') {
+              gtag('event', 'email_capture', {
+                'event_category': 'lead_generation',
+                'event_label': email
+              });
+            }
+          }, 1000);
+        });
+      }
+    });
+  </script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  
+  <!-- Netlify Integrations -->
+  <script src="js/netlify-integration.js" defer></script>
+</body>
+</html> 

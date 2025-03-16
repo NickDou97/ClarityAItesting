@@ -1,0 +1,637 @@
+/**
+ * Results Component Styles
+ */
+
+.results-section {
+  display: none;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Card base styles for results */
+.results-container .card {
+  background-color: rgba(30, 30, 38, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+.results-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* Score Card */
+.score-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.score-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.assessment-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.score-display {
+  margin-bottom: 1.5rem;
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(110, 89, 242, 0.2), rgba(110, 89, 242, 0));
+  border: 2px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.score-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  margin-top: 0.25rem;
+}
+
+.maturity-level {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.maturity-description {
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  line-height: 1.5;
+}
+
+/* Radar Chart Container */
+.radar-container {
+  grid-column: span 8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Email capture form styling */
+.email-capture {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.email-capture h4 {
+  margin-top: 0;
+}
+
+.email-capture p {
+  margin-bottom: 1.5rem;
+  color: var(--color-gray-300);
+}
+
+.email-capture-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-gray-400);
+}
+
+.consent-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.consent-checkbox input {
+  margin-top: 0.25rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Sharing options */
+.sharing-options {
+  grid-column: span 12;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: var(--color-white);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.share-button:hover {
+  background: rgba(110, 89, 242, 0.2);
+  transform: translateY(-2px);
+}
+
+.share-button i {
+  font-size: 1.25rem;
+}
+
+.linkedin-share {
+  background: rgba(10, 102, 194, 0.2);
+}
+
+.linkedin-share:hover {
+  background: rgba(10, 102, 194, 0.3);
+}
+
+.twitter-share {
+  background: rgba(29, 161, 242, 0.2);
+}
+
+.twitter-share:hover {
+  background: rgba(29, 161, 242, 0.3);
+}
+
+.email-share {
+  background: rgba(234, 67, 53, 0.2);
+}
+
+.email-share:hover {
+  background: rgba(234, 67, 53, 0.3);
+}
+
+.download-report {
+  background: rgba(110, 89, 242, 0.2);
+}
+
+.download-report:hover {
+  background: rgba(110, 89, 242, 0.4);
+}
+
+/* Dimension scores */
+.dimension-scores {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.dimension-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dimension-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.dimension-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  background: rgba(110, 89, 242, 0.1);
+  color: var(--color-primary);
+}
+
+.dimension-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.dimension-score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.dimension-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.benchmark-value {
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+}
+
+.benchmark-value span {
+  font-weight: 600;
+  color: var(--color-gray-300);
+}
+
+.dimension-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-gray-300);
+  margin-top: auto;
+}
+
+.dimension-recommendation {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.recommendation-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+/* Make sure our icon colors are consistent */
+.fa-chart-line, 
+.fa-chart-radar, 
+.fa-industry,
+.visualization-icon {
+  color: var(--color-primary) !important;
+}
+
+/* ------------- ENHANCED GLASS PANEL STYLING ------------- */
+/* Completely fixed glass panel effect with proper sizing */
+.glass-panel {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: visible !important; /* Ensure content is not clipped */
+  max-width: 100%;
+  min-height: 400px;
+  transition: all 0.3s ease;
+}
+
+/* Better container for visualization with explicit dimensions */
+.glass-panel .visualization-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure canvas wrappers have explicit dimensions and don't overflow */
+.radar-canvas-wrapper,
+.bar-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  margin: 0 auto;
+}
+
+/* Hide bar canvas by default but keep dimensions consistent */
+.bar-canvas-wrapper {
+  display: none;
+}
+
+/* Ensure radar chart takes full dimensions of wrapper */
+#radar-chart,
+#bar-chart {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Add visual cues for visualization toggle */
+.visualization-controls {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.viz-toggle-btn {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.viz-toggle-btn:hover {
+  background: #e9ecef;
+}
+
+.viz-toggle-btn .icon {
+  margin-right: 0.5rem;
+}
+
+.viz-toggle-btn.recommended::after {
+  content: "Recommended";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28a745;
+  color: white;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+/* Active states for toggle button */
+.viz-toggle-btn.radar-active {
+  background: #6e59f2;
+  color: white;
+}
+
+.viz-toggle-btn.bar-active {
+  background: #ff9b50;
+  color: white;
+}
+
+/* Chart legend styling */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Responsive adjustments with explicit breakpoints */
+@media (min-width: 1200px) {
+  .glass-panel {
+    padding: 2rem;
+    min-height: 500px;
+  }
+  
+  .glass-panel .visualization-container {
+    min-height: 500px;
+  }
+  
+  .radar-canvas-wrapper,
+  .bar-canvas-wrapper,
+  #radar-chart,
+  #bar-chart {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .glass-panel {
+    padding: 1.75rem;
+    min-height: 450px;
+  }
+  
+  .glass-panel .visualization-container {
+    min-height: 450px;
+  }
+  
+  .radar-canvas-wrapper,
+  .bar-canvas-wrapper,
+  #radar-chart,
+  #bar-chart {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 767px) {
+  .results-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .score-card,
+  .radar-container {
+    grid-column: span 1;
+  }
+  
+  .glass-panel {
+    padding: 1.25rem;
+    min-height: 350px;
+  }
+  
+  .glass-panel .visualization-container {
+    min-height: 350px;
+  }
+  
+  .radar-canvas-wrapper,
+  .bar-canvas-wrapper,
+  #radar-chart,
+  #bar-chart {
+    min-height: 300px;
+  }
+  
+  .viz-toggle-btn span {
+    display: none;
+  }
+  
+  .viz-toggle-btn i {
+    margin-right: 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .score-value {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-panel {
+    padding: 1rem;
+    margin: 1rem auto;
+    min-height: 350px;
+  }
+  
+  .visualization-container {
+    min-height: 300px;
+  }
+  
+  .radar-canvas-wrapper,
+  .bar-canvas-wrapper {
+    min-height: 250px;
+  }
+  
+  .email-form {
+    flex-direction: column;
+  }
+  
+  .email-input {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .glass-panel {
+    padding: 0.75rem;
+    min-height: 300px;
+  }
+  
+  .visualization-container {
+    min-height: 250px;
+  }
+  
+  .radar-canvas-wrapper,
+  .bar-canvas-wrapper {
+    min-height: 200px;
+  }
+  
+  .viz-toggle-btn .text {
+    display: none;
+  }
+  
+  .viz-toggle-btn .icon {
+    margin-right: 0;
+  }
+}
+
+/* Accessibility enhancements */
+.viz-toggle-btn:focus {
+  outline: 2px solid #6e59f2;
+  outline-offset: 2px;
+}
+
+.email-input:focus {
+  outline: 2px solid #6e59f2;
+  border-color: #6e59f2;
+}
+
+/* Loading state */
+.visualization-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(110, 89, 242, 0.3);
+  border-radius: 50%;
+  border-top-color: #6e59f2;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Visualization error message */
+.visualization-error {
+  padding: 1rem;
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 0.25rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+} 

@@ -1,0 +1,431 @@
+/* 
+ * Radar Chart Component
+ * Styles for the AI maturity assessment radar chart
+ */
+
+.radar-container {
+  position: relative;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 550px;
+  background-color: rgba(30, 30, 38, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.radar-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.radar-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.radar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.radar-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  margin-bottom: 1rem;
+}
+
+.radar-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#radar-chart {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 400px;
+  transition: opacity 0.3s ease;
+}
+
+.radar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-score {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.legend-benchmark {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* Animation for chart updates */
+@keyframes radar-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.radar-pulse {
+  animation: radar-pulse 0.5s ease-out;
+}
+
+/* Chart.js Tooltip Customization */
+.chartjs-tooltip {
+  background-color: rgba(20, 20, 30, 0.9) !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-family: 'Inter', sans-serif !important;
+  z-index: 100 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .radar-container {
+    padding: 1rem;
+    margin: 1.5rem auto;
+    max-width: 100%;
+  }
+  
+  .radar-title {
+    font-size: 1.1rem;
+  }
+  
+  .radar-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .radar-canvas-wrapper {
+    min-height: 250px;
+  }
+  
+  #radar-chart {
+    max-height: 300px;
+  }
+  
+  .legend-item {
+    font-size: 0.8rem;
+  }
+}
+
+/* High contrast and accessibility support */
+@media (prefers-contrast: high) {
+  .legend-item {
+    color: white;
+  }
+  
+  .radar-subtitle {
+    color: white;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .radar-container:hover {
+    transform: none;
+  }
+  
+  .radar-pulse {
+    animation: none;
+  }
+}
+
+/* 
+ * Visualization Components
+ * Styles for the AI maturity assessment visualizations (radar and bar chart)
+ */
+
+.radar-container {
+  position: relative;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 550px;
+  background-color: rgba(30, 30, 38, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.radar-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.radar-header {
+  margin-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.radar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.radar-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+  margin-bottom: 1rem;
+}
+
+/* Visualization Container */
+.visualization-container {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+/* Radar Chart */
+.radar-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#radar-chart {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 400px;
+  transition: opacity 0.3s ease;
+}
+
+/* Bar Chart */
+.bar-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#bar-chart {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 400px;
+  transition: opacity 0.3s ease;
+}
+
+/* Visualization Toggle */
+.visualization-controls {
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.toggle-button[aria-pressed="true"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  display: inline-block;
+}
+
+.radar-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-300);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.legend-score {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.legend-benchmark {
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+/* Animation for chart updates */
+@keyframes radar-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.radar-pulse, .chart-pulse {
+  animation: radar-pulse 0.5s ease-out;
+}
+
+/* Chart.js Tooltip Customization */
+.chartjs-tooltip {
+  background-color: rgba(20, 20, 30, 0.9) !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-family: 'Inter', sans-serif !important;
+  z-index: 100 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .radar-container {
+    padding: 1rem;
+    margin: 1.5rem auto;
+    max-width: 100%;
+  }
+  
+  .radar-title {
+    font-size: 1.1rem;
+  }
+  
+  .radar-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .radar-canvas-wrapper {
+    min-height: 250px;
+  }
+  
+  #radar-chart {
+    max-height: 300px;
+  }
+  
+  .bar-canvas-wrapper {
+    min-height: 200px;
+  }
+  
+  #bar-chart {
+    max-height: 300px;
+  }
+  
+  .legend-item {
+    font-size: 0.8rem;
+  }
+  
+  .toggle-text {
+    display: none;
+  }
+}
+
+/* High contrast and accessibility support */
+@media (prefers-contrast: high) {
+  .legend-item {
+    color: white;
+  }
+  
+  .radar-subtitle {
+    color: white;
+  }
+  
+  .toggle-button {
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .radar-container:hover {
+    transform: none;
+  }
+  
+  .radar-pulse, .chart-pulse {
+    animation: none;
+  }
+}

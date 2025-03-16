@@ -1,0 +1,17 @@
+/**
+ * Base styles index
+ * This file imports all base CSS files to make them easier to include in other files
+ */
+
+/* Import variables first to ensure they're available everywhere */
+@import 'variables.css';
+
+/* Import typography styles */
+@import 'typography.css';
+
+/* Import reset styles */
+@import 'reset.css';
+
+/* Other base styles can be imported here */
+
+/* Add any future base stylesheets here */ 

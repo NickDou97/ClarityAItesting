@@ -1,0 +1,10 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Personal Profile Card",
+  "main": "index.js",
+  "dependencies": {
+    "@netlify/blobs": "^6.0.0",
+    "@netlify/functions": "^2.0.0"
+  }
+} 

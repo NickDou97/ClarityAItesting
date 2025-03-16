@@ -1,0 +1,13 @@
+# Redirect rule for success page
+/success /success.html 200
+
+# Handle form submissions
+/success?form-name=strategy-call /success.html 200
+/success?form-name=newsletter-signup /success.html 200
+/success?form-name=assessment-results /success.html 200
+
+# Fallback for any other success parameters
+/success?* /success.html 200
+
+# Custom 404
+/* /index.html 404 

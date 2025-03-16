@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Assess your organization's AI maturity level and get tailored recommendations for improvement.">
+  <meta name="keywords" content="AI assessment, AI maturity, artificial intelligence, technology readiness">
+  <meta name="theme-color" content="#6E59F2">
+  
+  <title>AI Maturity Assessment | Evaluate Your Organization's AI Capabilities</title>
+  
+  <!-- PWA Support -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AI Assessment">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon-32x32.png">
+  
+  <!-- Critical CSS -->
+  <style>
+    /* Inline critical CSS to reduce blocking render time */
+    :root {
+      --primary-color: #6E59F2;
+      --primary-lighter: #9C6FFF;
+      --bg-darker: #15151C;
+      --text-white: #FFFFFF;
+      --primary-gradient: linear-gradient(135deg, #6E59F2 0%, #9C6FFF 100%);
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-darker);
+      color: var(--text-white);
+    }
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #1A1A24 0%, #252535 100%);
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loading-container {
+      text-align: center;
+    }
+    .loading-spinner {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .loading-spinner .spinner-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top-color: var(--primary-lighter);
+      animation: spin 1.2s linear infinite;
+    }
+    .loading-spinner .spinner-ring:nth-child(2) {
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+      border-top-color: transparent;
+      border-right-color: var(--primary-lighter);
+      animation-duration: 1.5s;
+    }
+    .loading-spinner .spinner-ring:nth-child(3) {
+      width: 60%;
+      height: 60%;
+      top: 20%;
+      left: 20%;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: var(--primary-lighter);
+      animation-duration: 1.8s;
+    }
+    .loading-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    .loading-subtext {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="css/dist/styles.min.css?v=1.4" as="style">
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/dist/styles.min.css?v=1.4">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  
+  <!-- Three.js for 3D effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- GSAP for advanced animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  
+  <!-- Module/NoModule pattern for better browser compatibility -->
+  <script type="module" src="js/assessment.js" async></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXX');
+    
+    // Setup tracking function for components
+    window.trackEvent = function(category, action, label, value) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': label,
+        'value': value
+      });
+    };
+  </script>
+</head>
+<body class="assessment-page">
+  <!-- Modern Loading Screen -->
+  <div class="loading">
+    <div class="loading-container">
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+      </div>
+      <div class="loading-text">Initializing AI Assessment</div>
+      <div class="loading-subtext">Preparing personalized assessment framework...</div>
+    </div>
+  </div>
+  
+  <!-- Fallback script to ensure loading screen is removed -->
+  <script>
+    // Ensure loading screen is removed after a timeout
+    setTimeout(function() {
+      const loadingScreen = document.querySelector('.loading');
+      if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+        }, 500);
+      }
+    }, 2000);
+  </script>
+  
+  <!-- Floating 3D Shapes - Move inside main content -->
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+    <div class="shape shape-5"></div>
+  </div>
+  
+  <!-- 3D Canvas Background -->
+  <canvas id="canvas-background" class="canvas-background"></canvas>
+  
+  <!-- Header -->
+  <header class="header" role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="logo" role="heading" aria-level="1">
+                <a href="index.html" aria-label="ClarityAI Homepage">
+                    <span>Clarity<span class="highlight">AI</span></span>
+                </a>
+            </div>
+            <div class="nav-links" role="list">
+                <a href="index.html#problem" role="listitem">The Problem</a>
+                <a href="index.html#solution" role="listitem">The Solution</a>
+                <a href="index.html#results" role="listitem">Results</a>
+                <a href="index.html#solutions" role="listitem">Solutions</a>
+            </div>
+            <a href="index.html#contact" class="nav-cta" role="button">Book a Strategy Call</a>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="assessment-container">
+      <div class="assessment-title-section">
+        <h1 class="assessment-title">AI Maturity Assessment</h1>
+        <p class="assessment-description">Evaluate your organization's AI capabilities across key dimensions to identify opportunities for strategic advancement.</p>
+      </div>
+      
+      <form id="assessment-form">
+        <div class="dimension-container">
+          <h2 class="dimension-title"><i class="fas fa-chess"></i> Strategy & Vision</h2>
+          <p class="dimension-description">How well is AI integrated into your organization's overall business strategy?</p>
+          
+          <div class="slider-container">
+            <div id="strategy-value" class="slider-value" style="left: 50%;">3</div>
+            <div class="slider-labels">
+              <span class="slider-label">Initial</span>
+              <span class="slider-label">Developing</span>
+              <span class="slider-label">Defined</span>
+              <span class="slider-label">Advanced</span>
+              <span class="slider-label">Leading</span>
+            </div>
+            <input type="range" min="1" max="5" value="3" class="assessment-slider" id="strategy-slider" data-dimension="strategy">
+          </div>
+        </div>
+        
+        <div class="dimension-container">
+          <h2 class="dimension-title"><i class="fas fa-cogs"></i> Technology & Infrastructure</h2>
+          <p class="dimension-description">How advanced is your technology stack for supporting AI capabilities?</p>
+          
+          <div class="slider-container">
+            <div id="technology-value" class="slider-value" style="left: 50%;">3</div>
+            <div class="slider-labels">
+              <span class="slider-label">Initial</span>
+              <span class="slider-label">Developing</span>
+              <span class="slider-label">Defined</span>
+              <span class="slider-label">Advanced</span>
+              <span class="slider-label">Leading</span>
+            </div>
+            <input type="range" min="1" max="5" value="3" class="assessment-slider" id="technology-slider" data-dimension="technology">
+          </div>
+        </div>
+        
+        <div class="dimension-container">
+          <h2 class="dimension-title"><i class="fas fa-database"></i> Data Management</h2>
+          <p class="dimension-description">How effective is your organization at managing, integrating, and utilizing data?</p>
+          
+          <div class="slider-container">
+            <div id="data-value" class="slider-value" style="left: 50%;">3</div>
+            <div class="slider-labels">
+              <span class="slider-label">Initial</span>
+              <span class="slider-label">Developing</span>
+              <span class="slider-label">Defined</span>
+              <span class="slider-label">Advanced</span>
+              <span class="slider-label">Leading</span>
+            </div>
+            <input type="range" min="1" max="5" value="3" class="assessment-slider" id="data-slider" data-dimension="data">
+          </div>
+        </div>
+        
+        <div class="dimension-container">
+          <h2 class="dimension-title"><i class="fas fa-users"></i> People & Skills</h2>
+          <p class="dimension-description">How developed is your workforce in terms of AI skills and expertise?</p>
+          
+          <div class="slider-container">
+            <div id="people-value" class="slider-value" style="left: 50%;">3</div>
+            <div class="slider-labels">
+              <span class="slider-label">Initial</span>
+              <span class="slider-label">Developing</span>
+              <span class="slider-label">Defined</span>
+              <span class="slider-label">Advanced</span>
+              <span class="slider-label">Leading</span>
+            </div>
+            <input type="range" min="1" max="5" value="3" class="assessment-slider" id="people-slider" data-dimension="people">
+          </div>
+        </div>
+        
+        <div class="dimension-container">
+          <h2 class="dimension-title"><i class="fas fa-project-diagram"></i> Process & Operations</h2>
+          <p class="dimension-description">How well are AI capabilities integrated into your operational processes?</p>
+          
+          <div class="slider-container">
+            <div id="process-value" class="slider-value" style="left: 50%;">3</div>
+            <div class="slider-labels">
+              <span class="slider-label">Initial</span>
+              <span class="slider-label">Developing</span>
+              <span class="slider-label">Defined</span>
+              <span class="slider-label">Advanced</span>
+              <span class="slider-label">Leading</span>
+            </div>
+            <input type="range" min="1" max="5" value="3" class="assessment-slider" id="process-slider" data-dimension="process">
+          </div>
+        </div>
+        
+        <div class="dimension-container">
+          <h2 class="dimension-title"><i class="fas fa-balance-scale"></i> Governance & Ethics</h2>
+          <p class="dimension-description">How mature is your approach to AI governance, ethics, and responsible use?</p>
+          
+          <div class="slider-container">
+            <div id="governance-value" class="slider-value" style="left: 50%;">3</div>
+            <div class="slider-labels">
+              <span class="slider-label">Initial</span>
+              <span class="slider-label">Developing</span>
+              <span class="slider-label">Defined</span>
+              <span class="slider-label">Advanced</span>
+              <span class="slider-label">Leading</span>
+            </div>
+            <input type="range" min="1" max="5" value="3" class="assessment-slider" id="governance-slider" data-dimension="governance">
+          </div>
+        </div>
+        
+        <div class="submit-container">
+          <button type="submit" class="submit-button"><i class="fas fa-chart-line"></i> Generate My Results</button>
+        </div>
+      </form>
+      
+      <div id="results-section" class="hidden">
+        <!-- Results will be dynamically inserted here -->
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span>Clarity<span class="highlight">AI</span></span>
+                        <p>AI-Powered CX Solutions</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter Profile">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram Profile">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <a href="index.html#solutions">Agentic AI</a>
+                        <a href="index.html#solutions">Workflow Automation</a>
+                        <a href="index.html#solutions">Data Intelligence</a>
+                        <a href="index.html#solutions">Lead Generation</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="index.html#founder-story">About Us</a>
+                        <a href="index.html#results">Success Stories</a>
+                        <a href="index.html#faqs">FAQs</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="index.html#newsletter">AI Newsletter</a>
+                        <a href="ai-assessment.html">AI Assessment</a>
+                        <a href="index.html#contact">Implementation Guide</a>
+                        <a href="index.html#contact">CX Strategy Blog</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 ClarityAI. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </footer>
+  
+  <!-- Custom JS for 3D background effects -->
+  <script>
+    // Mobile menu functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navLinks = document.querySelector('.nav-links');
+      
+      if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+          this.classList.toggle('active');
+          this.setAttribute('aria-expanded', 
+            this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+          );
+        });
+      }
+    });
+    
+    // Handle slider interactions
+    document.querySelectorAll('.assessment-slider').forEach(slider => {
+      const dimension = slider.getAttribute('data-dimension');
+      const valueDisplay = document.getElementById(`${dimension}-value`);
+      
+      // Initial position
+      const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+      valueDisplay.style.left = `calc(${percent}%)`;
+      
+      // Update on change
+      slider.addEventListener('input', function() {
+        const percent = ((this.value - this.min) / (this.max - this.min)) * 100;
+        valueDisplay.style.left = `calc(${percent}%)`;
+        valueDisplay.textContent = this.value;
+      });
+    });
+    
+    // 3D Canvas Background
+    document.addEventListener('DOMContentLoaded', function() {
+      const canvas = document.getElementById('canvas-background');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      
+      // Particles
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.speedX = Math.random() * 1 - 0.5;
+          this.speedY = Math.random() * 1 - 0.5;
+          this.color = `rgba(${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 200 + 55)}, ${Math.random() * 0.2 + 0.1})`;
+        }
+        
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          
+          if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+          if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      
+      const particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push(new Particle());
+      }
+      
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for (let i = 0; i < particles.length; i++) {
+          particles[i].update();
+          particles[i].draw();
+          
+          // Draw connections
+          for (let j = i; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 100) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(110, 89, 242, ${0.1 - distance/1000})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+      
+      // Resize canvas on window resize
+      window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+    });
+  </script>
+</body>
+</html>
+

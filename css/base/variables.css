@@ -1,0 +1,153 @@
+/**
+ * CSS Variables
+ * Global design tokens
+ */
+
+:root {
+  /* Colors - Primary */
+  --primary-color: #6E59F2;
+  --primary-color-dark: #5541D0;
+  --primary-color-light: #A194F7;
+  
+  /* Colors - Secondary */
+  --secondary-color: #FF9B50;
+  --secondary-color-dark: #E58036;
+  --secondary-color-light: #FFBC7E;
+  
+  /* Colors - Neutral */
+  --text-white: #FFFFFF;
+  --text-light: #CCD2E3;
+  --text-dark: #0A0B0F;
+  --text-high-contrast: #FFFFFF;
+  --text-medium-contrast: #CCD2E3;
+  
+  /* Background Colors */
+  --bg-dark: #1E1E26;
+  --bg-darker: #15151C;
+  --bg-light: #26262F;
+  
+  /* Border Colors */
+  --border-color: rgba(255, 255, 255, 0.1);
+  
+  /* Error/Success Colors */
+  --error-color: #ff5555;
+  --success-color: #28C840;
+  --warning-color: #FFC107;
+  --info-color: #2196F3;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px;
+  
+  /* Typography */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono: 'Fira Code', 'Fira Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --mono-font: 'Roboto Mono', monospace;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px - Base font size */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-6xl: 3.75rem;   /* 60px */
+  
+  /* For backward compatibility */
+  --font-size-md: var(--font-size-base);
+  
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.75;
+  --line-height-relaxed: 2;
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Z-Index */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* Container Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  
+  /* Layout */
+  --header-height: 80px;
+  --max-width: 1280px;
+  
+  /* Text Shadows */
+  --text-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.1);
+  --text-shadow-md: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Already dark by default */
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #8673FF;
+    --secondary-color: #FFB067;
+    --text-light: #FFFFFF;
+    --border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0.001s;
+    --transition-medium: 0.001s;
+    --transition-slow: 0.001s;
+  }
+} 

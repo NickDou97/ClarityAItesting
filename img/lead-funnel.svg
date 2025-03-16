@@ -1,0 +1,44 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .funnel-section { fill-opacity: 0.9; stroke: #fff; stroke-width: 2; }
+    .text { font-family: 'Inter', sans-serif; font-size: 16px; fill: #fff; }
+    .stat { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: bold; fill: #fff; }
+    .arrow { fill: #fff; fill-opacity: 0.8; }
+  </style>
+  
+  <!-- Funnel background -->
+  <rect width="800" height="500" fill="#f9fafc" rx="8" />
+  <text x="400" y="50" text-anchor="middle" font-size="22" font-weight="bold" fill="#333">Lead Qualification Funnel</text>
+  
+  <!-- Funnel sections -->
+  <path class="funnel-section" d="M150,120 L650,120 L600,200 L200,200 Z" fill="#5d87ff" />
+  <path class="funnel-section" d="M200,210 L600,210 L550,290 L250,290 Z" fill="#4a6ccc" />
+  <path class="funnel-section" d="M250,300 L550,300 L500,380 L300,380 Z" fill="#3751a6" />
+  <path class="funnel-section" d="M300,390 L500,390 L450,470 L350,470 Z" fill="#223080" />
+  
+  <!-- Section labels -->
+  <text class="text" x="400" y="170" text-anchor="middle">All Leads</text>
+  <text class="stat" x="400" y="195" text-anchor="middle">1000</text>
+  
+  <text class="text" x="400" y="260" text-anchor="middle">Qualified Leads</text>
+  <text class="stat" x="400" y="285" text-anchor="middle">450</text>
+  
+  <text class="text" x="400" y="350" text-anchor="middle">High-Intent Leads</text>
+  <text class="stat" x="400" y="375" text-anchor="middle">200</text>
+  
+  <text class="text" x="400" y="440" text-anchor="middle">Sales Opportunities</text>
+  <text class="stat" x="400" y="465" text-anchor="middle">75</text>
+  
+  <!-- AI enhancement indicators -->
+  <circle cx="650" cy="170" r="25" fill="#3366ff" />
+  <text x="650" y="175" text-anchor="middle" font-size="14" fill="#fff">AI</text>
+  <path class="arrow" d="M620,170 L580,170 L590,160 L580,170 L590,180 Z" />
+  
+  <circle cx="650" cy="260" r="25" fill="#3366ff" />
+  <text x="650" y="265" text-anchor="middle" font-size="14" fill="#fff">AI</text>
+  <path class="arrow" d="M620,260 L580,260 L590,250 L580,260 L590,270 Z" />
+  
+  <circle cx="650" cy="350" r="25" fill="#3366ff" />
+  <text x="650" y="355" text-anchor="middle" font-size="14" fill="#fff">AI</text>
+  <path class="arrow" d="M620,350 L580,350 L590,340 L580,350 L590,360 Z" />
+</svg> 

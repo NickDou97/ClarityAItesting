@@ -1,0 +1,244 @@
+/**
+ * Guided Tour Component Styles
+ * Custom styling for Shepherd.js tour
+ */
+
+/* Base Shepherd styles with customization */
+.shepherd-element {
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', sans-serif;
+  z-index: 9999;
+  background-color: var(--color-background-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.shepherd-theme-custom {
+  --shepherd-color-primary: var(--color-primary);
+  --shepherd-theme-primary: var(--color-primary);
+  --shepherd-text-color: var(--color-white);
+  --shepherd-header-background: rgba(110, 89, 242, 0.1);
+}
+
+/* Header section */
+.shepherd-header {
+  background-color: var(--shepherd-header-background);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 1rem;
+  position: relative;
+}
+
+.shepherd-title {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.shepherd-cancel-icon {
+  color: var(--color-gray-300);
+  font-weight: normal;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.3rem;
+  margin: 0;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.shepherd-cancel-icon:hover {
+  color: var(--color-white);
+}
+
+/* Content section */
+.shepherd-text {
+  padding: 1.5rem;
+  line-height: 1.6;
+  color: var(--color-gray-100);
+}
+
+.shepherd-text p {
+  margin-bottom: 1rem;
+}
+
+.shepherd-text p:last-child {
+  margin-bottom: 0;
+}
+
+.shepherd-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.shepherd-text li {
+  margin-bottom: 0.5rem;
+}
+
+/* Button section */
+.shepherd-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.shepherd-button {
+  background: var(--color-background);
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.shepherd-button:hover {
+  background-color: rgba(110, 89, 242, 0.1);
+}
+
+.shepherd-button-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.shepherd-button-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.shepherd-button-secondary {
+  background-color: transparent;
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-100);
+}
+
+.shepherd-button-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-gray-100);
+}
+
+.shepherd-button + .shepherd-button {
+  margin-left: 0.5rem;
+}
+
+/* Arrow styles */
+.shepherd-arrow {
+  border-width: 8px;
+}
+
+.shepherd-arrow:before {
+  border-width: 8px;
+}
+
+.shepherd-element[data-popper-placement^='top'] .shepherd-arrow,
+.shepherd-element[data-popper-placement^='top'] .shepherd-arrow:before {
+  border-bottom-width: 0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: var(--color-background-dark);
+}
+
+.shepherd-element[data-popper-placement^='bottom'] .shepherd-arrow,
+.shepherd-element[data-popper-placement^='bottom'] .shepherd-arrow:before {
+  border-bottom-color: var(--shepherd-header-background);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-width: 0;
+}
+
+.shepherd-element[data-popper-placement^='left'] .shepherd-arrow,
+.shepherd-element[data-popper-placement^='left'] .shepherd-arrow:before {
+  border-bottom-color: transparent;
+  border-left-color: var(--color-background-dark);
+  border-right-width: 0;
+  border-top-color: transparent;
+}
+
+.shepherd-element[data-popper-placement^='right'] .shepherd-arrow,
+.shepherd-element[data-popper-placement^='right'] .shepherd-arrow:before {
+  border-bottom-color: transparent;
+  border-left-width: 0;
+  border-right-color: var(--color-background-dark);
+  border-top-color: transparent;
+}
+
+/* Overlay */
+.shepherd-modal-overlay-container {
+  opacity: 0.7;
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+/* Highlighted elements */
+.highlight {
+  box-shadow: 0 0 0 4px var(--color-primary) !important;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  z-index: 9998 !important;
+}
+
+/* Tour progress animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tour-highlight {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Custom styles for results walkthrough */
+.results-walkthrough .shepherd-text {
+  font-size: 0.9rem;
+}
+
+.results-walkthrough strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shepherd-element {
+    max-width: 90%;
+    min-width: 200px;
+  }
+  
+  .shepherd-text {
+    padding: 1rem;
+  }
+  
+  .shepherd-footer {
+    padding: 0 1rem 1rem;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .highlight, 
+  .shepherd-element,
+  .shepherd-button,
+  .shepherd-modal-overlay-container {
+    transition: none !important;
+  }
+  
+  .tour-highlight {
+    animation: none !important;
+  }
+} 

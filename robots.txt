@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Disallow variant pages for A/B testing to prevent duplicate content
+Disallow: /variant-b/
+
+# Block specific bots known for content scraping
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Sitemap location
+Sitemap: https://clarityai.me/sitemap.xml 

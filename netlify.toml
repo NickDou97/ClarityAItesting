@@ -1,0 +1,154 @@
+[build]
+  publish = "/"
+  command = "echo 'No build command necessary for static site'"
+
+# Function dependencies installation
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
+# SEO: Lighthouse plugin for quality control
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  [plugins.inputs]
+  [plugins.inputs.thresholds]
+    performance = 0.8
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
+
+# SEO: XML Sitemap generation
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+  buildDir = "/"
+  exclude = [
+    '**/admin/**',
+    '**/variant-b/**',
+    '**/success.html'
+  ]
+
+# Asset optimization
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = false
+  minify = false
+  # Don't add vendor prefixes automatically as it can cause conflicts
+  autoprefixer = false
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true
+
+# Request Chain instrumentation for better debugging and performance analysis
+[request_chain]
+  enabled = true
+  
+# Form submissions handling
+[forms]
+  # Strategy call form
+  [forms.strategy-call]
+    name = "strategy-call"
+    success_url = "/success?form-name=strategy-call"
+  
+  # Newsletter form
+  [forms.newsletter-signup]
+    name = "newsletter-signup"
+    success_url = "/success?form-name=newsletter-signup"
+    
+  # Assessment results form
+  [forms.assessment-results]
+    name = "assessment-results"
+    success_url = "/success?form-name=assessment-results"
+
+# Edge Functions configuration
+[[edge_functions]]
+  path = "/*"
+  function = "personalization"
+
+[[edge_functions]]
+  path = "/*"
+  function = "ab-testing"
+
+# Scheduled Functions
+[functions."follow-up-emails"]
+  schedule = "0 8 * * *" # Run daily at 8am UTC
+
+# Cache control for optimal performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://html2canvas.hertzen.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com"
+
+# SEO: No-index headers for Netlify preview sites only
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+  # This header will only be applied to Netlify's preview domains
+  # Make sure to configure your Netlify site to check for deployment context
+  condition = {deploy-context = ["deploy-preview", "branch-deploy"]}
+
+# Standard caching for static assets
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Enable SWR for HTML files to serve stale content while revalidating
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, stale-while-revalidate=60"
+
+# Block AI crawler bots for content protection
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noai, noimageai"
+
+# Redirect rules
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+# Custom 404 page
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Enable Image CDN for optimization
+[image_cdn]
+  enabled = true
+
+# A/B Testing configuration
+[[split_test]]
+  from = "/"
+  to = ["/", "/variant-b/"]
+  id = "homepage-test"
+  cookie = "netlify-split-test"
+  percentage = [50, 50] 

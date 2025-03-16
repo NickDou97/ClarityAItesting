@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Updated head section with Google Analytics only -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Performance Optimizations -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <meta name="theme-color" content="#121218">
+    
+    <!-- Primary Meta Tags -->
+    <title>ClarityAI | Agentic AI Solutions for CX Teams</title>
+    <meta name="title" content="ClarityAI | Agentic AI Solutions for CX Teams">
+    <meta name="description" content="ClarityAI - Agentic AI solutions that empower CX teams to scale personalized outreach without sacrificing authenticity. Boost conversion rates by 48% within 30 days.">
+    <meta name="author" content="Nick - ClarityAI">
+    <meta name="keywords" content="agentic ai, customer experience, ai solutions, cx teams, lead generation, ai workflow automation, personalized outreach, ai for sales, cx transformation">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clarityai.me/">
+    <meta property="og:title" content="ClarityAI | Transform Your CX Strategy With AI">
+    <meta property="og:description" content="Our AI solutions help CX teams build authentic connections that convert while eliminating 70% of low-value tasks. See results in under 14 days.">
+    <meta property="og:image" content="https://clarityai.me/img/profile.jpg">
+    <meta property="og:site_name" content="ClarityAI">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://clarityai.me/">
+    <meta name="twitter:title" content="ClarityAI | Transform Your CX Strategy With AI">
+    <meta name="twitter:description" content="Our AI solutions help CX teams build authentic connections that convert while eliminating 70% of low-value tasks. See results in under 14 days.">
+    <meta name="twitter:image" content="https://clarityai.me/img/profile.jpg">
+    <meta name="twitter:creator" content="@ClarityAI">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://clarityai.me/">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="preload" href="css/dist/styles.min.css?v=1.4" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="js/main.js" as="script">
+    <link rel="preload" href="img/profile.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Fallback for preload -->
+    <noscript><link rel="stylesheet" href="css/dist/styles.min.css?v=1.4"></noscript>
+    
+    <!-- Fonts and Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Font display optimization -->
+    <style>
+        /* Font display strategy for faster text rendering */
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff) format('woff');
+        }
+        
+        /* Apply FOUT prevention */
+        .wf-loading {
+            visibility: hidden;
+        }
+        
+        .wf-active, .wf-inactive {
+            visibility: visible;
+        }
+    </style>
+    
+    <!-- Stylesheets -->
+    <link rel="preload" href="css/dist/styles.min.css?v=1.4" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/dist/styles.min.css?v=1.4"></noscript>
+    
+    <!-- Critical Inline Styles for Layout Fallback -->
+    <style>
+        /* Essential layout styles in case external CSS fails */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #15151C;
+            color: #FFFFFF;
+        }
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(21, 21, 28, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar {
+            width: 100%;
+            max-width: 1280px;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 80px;
+            width: 100%;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* Debug styling to visually check if stylesheet loaded */
+        #style-debug:after {
+            content: "CSS OK";
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #6E59F2;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            z-index: 9999;
+            display: block;
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ClarityAI",
+      "description": "Agentic AI solutions that empower CX teams to scale personalized outreach without sacrificing authenticity",
+      "image": "https://clarityai.me/img/profile.jpg",
+      "url": "https://clarityai.me",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+      },
+      "priceRange": "$$$",
+      "sameAs": [
+        "https://linkedin.com/",
+        "https://twitter.com/",
+        "https://instagram.com/"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Nick"
+      },
+      "knowsAbout": ["Artificial Intelligence", "Customer Experience", "Lead Generation", "AI Automation"],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "AI Strategy Development",
+          "description": "Tailored AI strategy for your CX team",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://clarityai.me/#contact"
+        },
+        {
+          "@type": "Offer",
+          "name": "AI Maturity Assessment",
+          "description": "Comprehensive assessment of your organization's AI readiness",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://clarityai.me/#ai-assessment"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "CX AI Solutions",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lead Generation Optimization",
+              "description": "AI-powered lead qualification and engagement"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CX Team AI Transformation",
+              "description": "Implement agentic AI solutions within your existing CX workflow"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Personalized Outreach Automation",
+              "description": "Scale authentic customer communications with AI"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "48",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How quickly can we expect to see results after implementing your AI solutions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most clients see measurable ROI within 14 days of implementation. Our solutions are designed for rapid deployment and immediate impact on your CX metrics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need technical expertise to use your AI solutions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No coding knowledge is required. Our solutions integrate with your existing tools and are designed to be used by your current CX team without technical expertise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure AI-generated communications remain authentic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our approach balances automation with human oversight. We implement AI that learns your brand voice and customer preferences while maintaining critical human touchpoints in the process."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2HCW90FHKR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2HCW90FHKR', {
+        'page_title': 'ClarityAI Home',
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    </script>
+    
+    <!-- Add HTML2Canvas -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js" defer></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- Debug indicator to confirm styles are loaded -->
+    <div id="style-debug" style="display: none;"></div>
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#main" class="skip-to-content">Skip to content</a>
+    
+    <!-- Toggle Animation Button -->
+    <button id="toggle-animation" class="toggle-animation-btn" title="Toggle Animation" aria-label="Toggle background animation">
+        <i class="fas fa-power-off" aria-hidden="true"></i>
+    </button>
+    
+    <!-- Neural Network Background -->
+    <div class="neural-bg" aria-hidden="true">
+        <div class="neural-animation" id="neural-network"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="logo" role="heading" aria-level="1">
+                    <a href="index.html" aria-label="ClarityAI Homepage">
+                        <span>Clarity<span class="highlight">AI</span></span>
+                    </a>
+                </div>
+                <div class="nav-links" role="list">
+                    <a href="#problem" role="listitem">The Problem</a>
+                    <a href="#solution" role="listitem">The Solution</a>
+                    <a href="#results" role="listitem">Results</a>
+                    <a href="#solutions" role="listitem">Solutions</a>
+                </div>
+                <a href="#contact" class="nav-cta" role="button">Book a Strategy Call</a>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" role="main">
+        <!-- Hero Section -->
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <div class="badge">AI-Powered Revenue Generation</div>
+                    <h1 id="hero-heading" class="hero-headline">We Help CX Teams <span class="gradient-text">Exceed Targets</span> With Agentic AI</h1>
+                    <p class="hero-subheadline">Your CX team is sitting on untapped revenue potential. Our collaborative AI solutions help you build authentic connections that convert while eliminating 70% of low-value tasks.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="primary-button" role="button">
+                            <span class="button-text cta-text-personalized">Get Your Tailored AI Strategy</span>
+                            <span class="button-icon" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                        <a href="ai-assessment.html" class="secondary-button" role="button">Take the 2-Min Assessment</a>
+                    </div>
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom solutions within 14 days</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No coding knowledge required</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Works with your existing tools</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image" aria-hidden="true">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="code-line">
+                                <span class="code-text">Analyzing lead data...</span>
+                                <span class="process-item">
+                                    <span class="process-status">
+                                        <i class="fas fa-spinner fa-spin"></i>
+                                        Processing
+                                    </span>
+                                    <span class="process-badge status-processing">Real-time</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-text">Applying AI scoring model...</span>
+                                <span class="process-item">
+                                    <span class="process-status">Score: <span class="score-value">85</span></span>
+                                    <span class="process-badge status-high">High Value</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-text">Filtering qualified leads...</span>
+                                <span class="process-item">
+                                    <span class="process-status">Found: <span class="leads-value">24</span></span>
+                                    <span class="process-badge status-success">Qualified</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="code-text">Personalizing outreach...</span>
+                                <span class="process-item">
+                                    <span class="process-status">
+                                        <i class="fas fa-magic"></i>
+                                        Crafting
+                                    </span>
+                                    <span class="process-badge status-success">AI-Enhanced</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom location greeting that will be replaced by the Edge Function -->
+        <span id="location-greeting" style="display:none;">Hello from ClarityAI!</span>
+        <!-- Custom CTA text for personalization -->
+        <span class="cta-text-personalized" style="display:none;">Get Your Tailored AI Strategy</span>
+        <!-- Newsletter text for personalization -->
+        <span class="newsletter-text-personalized" style="display:none;">Join Our AI Newsletter</span>
+        
+        <!-- Quick Benefits Section -->
+        <section class="solution-section" id="benefits">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <div class="section-tag">The Results You Can Expect</div>
+                    <h2>Transform Your CX Team In <span class="gradient-text">Just 2 Weeks</span></h2>
+                </div>
+                
+                <div class="stat-highlight fade-in">
+                    <div class="stat-highlight-content">
+                        <div class="stat-number-large counter" data-target="68">0</div>
+                        <div class="stat-suffix">%</div>
+                        <p class="stat-description">More qualified conversations with decision-makers in your first month</p>
+                    </div>
+                    <div class="stat-divider-vertical"></div>
+                    <div class="stat-highlight-content">
+                        <div class="stat-number-large">3</div>
+                        <div class="stat-suffix">X</div>
+                        <p class="stat-description">Increase in personalized outreach with the same team size</p>
+                    </div>
+                    <div class="stat-divider-vertical"></div>
+                    <div class="stat-highlight-content">
+                        <div class="stat-prefix">Under</div>
+                        <div class="stat-number-large">14</div>
+                        <div class="stat-suffix">days</div>
+                        <p class="stat-description">To see measurable ROI from your AI investment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="features-section" id="problem">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <div class="section-tag">The Costly Reality</div>
+                    <h2>Your Competitors Are <span class="gradient-text">Pulling Ahead</span></h2>
+                    <p>While most companies struggle with AI implementation, the leaders are creating an unbridgeable competitive gap:</p>
+                </div>
+                
+                <div class="stat-highlight fade-in">
+                    <div class="stat-highlight-content">
+                        <div class="stat-number-large counter" data-target="86">0</div>
+                        <div class="stat-suffix">%</div>
+                        <p class="stat-description">of companies report inadequate AI training, creating massive opportunity costs.</p>
+                    </div>
+                    <div class="stat-divider-vertical"></div>
+                    <div class="stat-highlight-content">
+                        <div class="stat-prefix">Top</div>
+                        <div class="stat-number-large">10</div>
+                        <div class="stat-suffix">%</div>
+                        <p class="stat-description">of companies using AI correctly are capturing 90% of the market value.</p>
+                    </div>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Wasted AI Investment</h3>
+                        <p>The average company is getting less than 20% of potential value from their AI tools due to poor implementation.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <h3>Time Running Out</h3>
+                        <p>Every month of ineffective AI use puts you further behind competitors who are rapidly building their advantage.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growing Performance Gap</h3>
+                        <p>Market leaders using AI correctly are seeing 4-5x higher conversion rates and customer satisfaction scores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution-section" id="solution">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <div class="section-tag">Your Competitive Edge</div>
+                    <h2>The <span class="gradient-text">Unfair Advantage</span> You Need</h2>
+                    <p>Skip the painful AI learning curve and immediately implement battle-tested solutions that deliver measurable ROI:</p>
+                </div>
+                
+                <div class="services-container">
+                    <div class="service-card featured-card fade-in">
+                        <div class="service-icon"><i class="fas fa-robot"></i></div>
+                        <h3>Revenue-Generating AI Agents</h3>
+                        <p>Custom AI agents that deliver qualified leads, craft personalized outreach, and provide insights that directly impact your bottom line.</p>
+                        <div class="service-tag">Most Popular</div>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-brain"></i></div>
+                        <h3>Conversion-Focused Prompting</h3>
+                        <p>Unlock higher response rates with our proprietary prompt frameworks that generate messages prospects actually want to respond to.</p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Seamless System Integration</h3>
+                        <p>No complex IT projects required. Our solutions work with your existing CRM and tools, delivering value from day one with minimal disruption.</p>
+                    </div>
+                    
+                    <div class="service-card fade-in">
+                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>ROI-Focused Team Training</h3>
+                        <p>Unlike generic AI training, we focus exclusively on high-impact use cases that directly improve revenue metrics and customer satisfaction.</p>
+                    </div>
+                </div>
+                
+                <!-- New Collaborative Process Section -->
+                <div class="collaborative-process fade-in">
+                    <h3>Your Involvement Is <span class="gradient-text">Essential</span> To Our Process</h3>
+                    <p class="process-intro">This isn't another "set it and forget it" service. We succeed through true partnership:</p>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h4>Deep Discovery</h4>
+                                <p>We start by deeply understanding <strong>your specific business context</strong> and customer journey. Your team's expertise is critical in helping us understand what truly resonates with your ideal customers.</p>
+                                <div class="client-involvement">
+                                    <i class="fas fa-users"></i> Your involvement: 2-3 key stakeholder interviews
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h4>Tailored Solution Design</h4>
+                                <p>We collaboratively design AI agents and workflows that reflect <strong>your unique brand voice</strong> and business rules. Your feedback during this stage ensures the solution feels authentic to your brand.</p>
+                                <div class="client-involvement">
+                                    <i class="fas fa-users"></i> Your involvement: Solution review workshops, feedback sessions
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h4>Iterative Implementation</h4>
+                                <p>We implement in small, measurable phases with <strong>continuous feedback loops</strong>. Your team's real-world testing provides the insights needed for rapid refinement and optimization.</p>
+                                <div class="client-involvement">
+                                    <i class="fas fa-users"></i> Your involvement: Weekly check-ins, real-world testing
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">04</div>
+                            <div class="step-content">
+                                <h4>Knowledge Transfer</h4>
+                                <p>We ensure your team fully understands how to <strong>leverage and evolve</strong> the solution independently. Your participation in hands-on training sessions ensures long-term self-sufficiency.</p>
+                                <div class="client-involvement">
+                                    <i class="fas fa-users"></i> Your involvement: Training participation, capability building
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box fade-in" style="margin-top: 3rem;">
+                    <h3>Ready to Outperform Your Competition?</h3>
+                    <div class="cta-box-buttons">
+                        <a href="#contact" class="primary-button">
+                            <span class="button-text">Book Your Custom AI Strategy Session</span>
+                            <span class="button-icon"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="results" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <div class="section-tag">Proven Results</div>
+                    <h2 id="testimonials-heading">Companies Like Yours Are <span class="gradient-text">Crushing Their Targets</span></h2>
+                    <p>Don't take our word for it. Here's what our clients achieved in their first 30 days:</p>
+                </div>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card fade-in" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="datePublished" content="2024-02-15">
+                        <div class="testimonial-metric">
+                            <div class="metric-number">500+</div>
+                            <div class="metric-label">Leads Processed</div>
+                        </div>
+                        <div class="testimonial-content" itemprop="reviewBody">
+                            "Working with Nick completely changed our pre-event strategy. He processed over 500 BuildEX attendees and created custom merge fields that made our marketing campaign feel truly personalized. The best part? My team finally had time to focus on strategic work instead of manual data processing."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img 
+                                    src="img/bianca.jpg" 
+                                    alt="Bianca Hernandez - Field Marketing Manager" 
+                                    itemprop="image" 
+                                    loading="lazy"
+                                    width="60" 
+                                    height="60"
+                                >
+                            </div>
+                            <div>
+                                <div class="author-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                    <span itemprop="name">Bianca Oporto</span>
+                                </div>
+                                <div class="author-role" itemprop="jobTitle">Field Marketing Manager</div>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="hidden">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="datePublished" content="2024-01-20">
+                        <div class="testimonial-metric">
+                            <div class="metric-number">48%</div>
+                            <div class="metric-label">Higher Win Rate</div>
+                        </div>
+                        <div class="testimonial-content" itemprop="reviewBody">
+                            "I've been so impressed by Nick's knowledge of a wide range of AI tools and how he is able to apply them to achieve specific business outcomes. He was able to quickly scale these systems across our team, we instantly saw a benefit."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img 
+                                    src="img/john-mason.jpg" 
+                                    alt="John Mason - Sales Team Lead" 
+                                    itemprop="image" 
+                                    loading="lazy"
+                                    width="60" 
+                                    height="60"
+                                >
+                            </div>
+                            <div>
+                                <div class="author-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                    <span itemprop="name">John Mason</span>
+                                </div>
+                                <div class="author-role" itemprop="jobTitle">Sales Team Lead</div>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="hidden">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card fade-in" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="datePublished" content="2024-03-05">
+                        <div class="testimonial-metric">
+                            <div class="metric-number">5x</div>
+                            <div class="metric-label">AI Initiative Growth</div>
+                        </div>
+                        <div class="testimonial-content" itemprop="reviewBody">
+                            "The biggest hurdle for us wasn't implementing AI—it was getting everyone aligned on what was actually possible. Nick didn't just provide tools; he created understanding. Once my team saw the real-world applications, ideas started flowing, and we've been able to scale those initial concepts across the entire organization."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img 
+                                    src="img/andre.jpg" 
+                                    alt="Andre Bautista - Regional Manager, Enterprise Software" 
+                                    itemprop="image" 
+                                    loading="lazy"
+                                    width="60" 
+                                    height="60"
+                                >
+                            </div>
+                            <div>
+                                <div class="author-name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                                    <span itemprop="name">Andre Brice</span>
+                                </div>
+                                <div class="author-role" itemprop="jobTitle">Regional Manager, Enterprise Software</div>
+                                <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating" class="hidden">
+                                    <meta itemprop="ratingValue" content="5">
+                                    <meta itemprop="bestRating" content="5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box fade-in" style="margin-top: 3rem;">
+                    <h3>Want Results Like These For Your Business?</h3>
+                    <div class="cta-box-buttons">
+                        <a href="#contact" class="primary-button">
+                            <span class="button-text">Book Your Free Strategy Session</span>
+                            <span class="button-icon"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Founder Story Section -->
+    <section class="founder-section" id="founder-story">
+        <div class="container">
+            <div class="section-intro fade-in">
+                <div class="section-tag">Meet The Founder</div>
+                <h2>The <span class="gradient-text">Story</span> Behind ClarityAI</h2>
+            </div>
+            
+            <div class="founder-content">
+                <div class="founder-grid">
+                    <div class="founder-image fade-in">
+                        <div class="founder-photo-container">
+                            <div class="founder-photo"></div>
+                            <div class="founder-badge">
+                                <i class="fas fa-robot"></i>
+                                <span>AI Specialist</span>
+                            </div>
+                            <div class="founder-stats">
+                                <div class="founder-stat">
+                                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                                    <div class="stat-value">200+</div>
+                                    <div class="stat-label">Clients Helped</div>
+                                </div>
+                                <div class="founder-stat">
+                                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                                    <div class="stat-value">5</div>
+                                    <div class="stat-label">Years in AI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="founder-text fade-in">
+                        <h3>A bit about me and why I'm <span class="accent-text">obsessed</span> with helping CX teams...</h3>
+                        
+                        <p class="founder-intro"><strong>Hey there! I'm Nick</strong> — current SDR turned AI specialist, coffee enthusiast (<span class="highlight-text">way</span> too enthusiastic), and firm believer that technology should make work more human, not less.</p>
+                        
+                        <p class="founder-highlight">I started with the same generic playbook you've seen: <span class="quote">"Send 100 LinkedIn messages, make 100 dials, and let's build some pipeline!"</span> (Grab some cold brew too while you're at it)</p>
+                        
+                        <div class="founder-journey">
+                            <div class="journey-item">
+                                <div class="journey-marker">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-line"></div>
+                                </div>
+                                <div class="journey-content">
+                                    <h4>My Wake-Up Call</h4>
+                                    <p>After months of sending endless cookie-cutter messages with terrible response rates, I realized something had to change. I was spending 70% of my time on tedious tasks instead of meaningful conversations.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-item">
+                                <div class="journey-marker">
+                                    <div class="marker-dot"></div>
+                                    <div class="marker-line"></div>
+                                </div>
+                                <div class="journey-content">
+                                    <h4>The AI Experiment</h4>
+                                    <p>Frustrated and caffeinated, I started building AI agents at night to handle my most repetitive tasks. What started as a side project turned into a system that doubled my output while working <em>fewer</em> hours.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="journey-item">
+                                <div class="journey-marker">
+                                    <div class="marker-dot"></div>
+                                </div>
+                                <div class="journey-content">
+                                    <h4>The Big Insight</h4>
+                                    <p>I discovered that AI isn't about removing humans from the equation — it's about amplifying what makes us human: creativity, empathy, and strategic thinking. My teammates started asking for my systems, and ClarityAI was born.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="founder-callout"><strong>Here's what makes me different:</strong> I've been in your shoes. I'm not a consultant who theorizes about AI — I built these solutions because <em>I needed them myself</em> to hit quota while staying sane.</p>
+                        
+                        <p class="founder-note">Today, I help CX teams implement the same systems that transformed my career. No jargon, no empty promises — just practical AI solutions that create measurable results.</p>
+                        
+                        <div class="founder-approach">
+                            <h4>My Approach to AI</h4>
+                            <div class="approach-items">
+                                <div class="approach-item">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Collaborative not transactional</span>
+                                </div>
+                                <div class="approach-item">
+                                    <i class="fas fa-brain"></i>
+                                    <span>Simplify the complex</span>
+                                </div>
+                                <div class="approach-item">
+                                    <i class="fas fa-bullseye"></i>
+                                    <span>Results over hype</span>
+                                </div>
+                                <div class="approach-item">
+                                    <i class="fas fa-user-friends"></i>
+                                    <span>Human-centered design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="achievements-container fade-in">
+                    <h3>In 2024, my AI agents helped me:</h3>
+                    
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>2x More Calls</h4>
+                                <p>Streamline processes that helped me book 2x the calls in one quarter</p>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>Lead Prioritization</h4>
+                                <p>Prospect thousands of leads and prioritize only the highest converting accounts</p>
+                            </div>
+                        </div>
+                        
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h4>More Focus Time</h4>
+                                <p>Automate my outreach process and give me more time to focus on side projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-box fade-in">
+                    <h3>Let's Unlock Your Team's Potential</h3>
+                    <p class="cta-personal">If you're tired of generic AI advice and ready for solutions tailored to your specific challenges, I'd love to chat.</p>
+                    <div class="cta-box-buttons">
+                        <a href="#contact" class="primary-button">
+                            <span class="button-text">Book a Strategy Call With Nick</span>
+                            <span class="button-icon"><i class="fas fa-arrow-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Tab Section -->
+    <section class="solutions-section" id="solutions">
+        <div class="container">
+            <div class="section-intro fade-in">
+                <div class="section-tag">Real-World Solutions</div>
+                <h2>How I've <span class="gradient-text">Solved Problems</span> With AI</h2>
+                <p>These aren't theoretical approaches—they're solutions I've personally built and implemented</p>
+            </div>
+            
+            <div class="solution-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-button active" data-tab="agentic">Agentic AI</button>
+                    <button class="tab-button" data-tab="workflow">Workflow Automation</button>
+                    <button class="tab-button" data-tab="data">Data Intelligence</button>
+                    <button class="tab-button" data-tab="leads">Lead Generation</button>
+                </div>
+                
+                <div class="tab-content-container">
+                    <!-- Agentic AI Tab -->
+                    <div class="tab-content active" id="agentic-tab">
+                        <div class="solution-layout">
+                            <div class="solution-content">
+                                <h3>Agentic AI Solutions for Non-Technical Teams</h3>
+                                <p>I created Agentic AI solutions that were crafted specifically for inexperienced users. The beauty in Agentic solutions is that they are tailored to vital tasks that you must always get right—there is no room for hallucinations in corporate AI use.</p>
+                                
+                                <div class="solution-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">AI agents that understand your specific business context</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Intuitive interfaces accessible to non-technical users</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Reliability checks that prevent AI hallucinations</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Customized to mission-critical processes</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-box">
+                                    <div class="stat-box-value">90%</div>
+                                    <div class="stat-box-description">Reduction in errors compared to general-purpose AI tools</div>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-visual">
+                                <div class="assessment-box">
+                                    <div class="assessment-title">
+                                        <div class="assessment-icon"><i class="fas fa-chart-bar"></i></div>
+                                        <h4>Measure Your AI Readiness Score</h4>
+                                    </div>
+                                    
+                                    <div class="assessment-description">
+                                        See where you stand against industry benchmarks in just 5 minutes
+                                    </div>
+                                    
+                                    <div class="assessment-progress">
+                                        <div class="progress-item">
+                                            <span class="progress-label">Analyzing AI capabilities</span>
+                                            <span class="progress-spinner"><i class="fas fa-spinner fa-pulse"></i> Real-time analysis</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Identifying growth opportunities</span>
+                                            <span class="progress-value">82%</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Get your personalized roadmap</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="ai-assessment.html" class="assessment-link cta-pulse">
+                                        <i class="fas fa-rocket"></i> Get Your AI Score Now
+                                    </a>
+                                    <div class="assessment-social-proof">
+                                        <span><i class="fas fa-check-circle"></i> 5,000+ organizations assessed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Workflow Automation Tab -->
+                    <div class="tab-content" id="workflow-tab">
+                        <div class="solution-layout">
+                            <div class="solution-content">
+                                <h3>Workflow Automation That Preserves Quality</h3>
+                                <p>I helped my company reduce outbound activities by streamlining our workflow and deploying agents that assist and reduce time per task while not sacrificing quality. My solutions focus on amplifying human capabilities, not replacing them.</p>
+                                
+                                <div class="solution-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Streamlined outbound processes without sacrificing quality</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Time-saving AI agents that assist rather than replace</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Human-in-the-loop systems that maintain control</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Automation that enhances human capabilities</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-box">
+                                    <div class="stat-box-value">40%</div>
+                                    <div class="stat-box-description">Reduction in time spent on repetitive tasks</div>
+                                </div>
+                            </div>
+                            <div class="solution-visual">
+                                <div class="assessment-box">
+                                    <div class="assessment-title">
+                                        <div class="assessment-icon"><i class="fas fa-chart-bar"></i></div>
+                                        <h4>Measure Your AI Readiness Score</h4>
+                                    </div>
+                                    
+                                    <div class="assessment-description">
+                                        See where you stand against industry benchmarks in just 5 minutes
+                                    </div>
+                                    
+                                    <div class="assessment-progress">
+                                        <div class="progress-item">
+                                            <span class="progress-label">Analyzing AI capabilities</span>
+                                            <span class="progress-spinner"><i class="fas fa-spinner fa-pulse"></i> Real-time analysis</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Identifying growth opportunities</span>
+                                            <span class="progress-value">79%</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Get your personalized roadmap</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="ai-assessment.html" class="assessment-link cta-pulse">
+                                        <i class="fas fa-rocket"></i> Get Your AI Score Now
+                                    </a>
+                                    <div class="assessment-social-proof">
+                                        <span><i class="fas fa-check-circle"></i> 5,000+ organizations assessed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Intelligence Tab -->
+                    <div class="tab-content" id="data-tab">
+                        <div class="solution-layout">
+                            <div class="solution-content">
+                                <h3>Intelligent Data Systems That Scale With Your Ideas</h3>
+                                <p>I helped my company scale AI across teams with better ways to manipulate our data by creating systems and agents that scale with your ideas. These systems transform raw data into actionable intelligence.</p>
+                                
+                                <div class="solution-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Cross-team AI solutions that scale seamlessly</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Flexible systems that adapt to evolving business needs</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Data transformation pipelines that create actionable insights</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Intelligent agents that understand your business context</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-box">
+                                    <div class="stat-box-value">3x</div>
+                                    <div class="stat-box-description">Faster data processing and analysis</div>
+                                </div>
+                            </div>
+                            <div class="solution-visual">
+                                <div class="assessment-box">
+                                    <div class="assessment-title">
+                                        <div class="assessment-icon"><i class="fas fa-chart-bar"></i></div>
+                                        <h4>Measure Your AI Readiness Score</h4>
+                                    </div>
+                                    
+                                    <div class="assessment-description">
+                                        See where you stand against industry benchmarks in just 5 minutes
+                                    </div>
+                                    
+                                    <div class="assessment-progress">
+                                        <div class="progress-item">
+                                            <span class="progress-label">Analyzing AI capabilities</span>
+                                            <span class="progress-spinner"><i class="fas fa-spinner fa-pulse"></i> Real-time analysis</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Identifying growth opportunities</span>
+                                            <span class="progress-value">84%</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Get your personalized roadmap</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="ai-assessment.html" class="assessment-link cta-pulse">
+                                        <i class="fas fa-rocket"></i> Get Your AI Score Now
+                                    </a>
+                                    <div class="assessment-social-proof">
+                                        <span><i class="fas fa-check-circle"></i> 5,000+ organizations assessed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lead Generation Tab -->
+                    <div class="tab-content" id="leads-tab">
+                        <div class="solution-layout">
+                            <div class="solution-content">
+                                <h3>Intelligent Lead Scouting & Prioritization</h3>
+                                <p>I helped my company scout leads from conferences and filter based on our ICP to create targeted and actionable lists. My agents are able to filter THOUSANDS of leads and score them based on your ICP—they're tailored and understand your business like an employee.</p>
+                                
+                                <div class="solution-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">AI agents that understand your ideal customer profile (ICP)</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Conference attendee list processing and prioritization</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Lead scoring algorithms customized to your business</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></span>
+                                        <span class="feature-text">Targeted lead lists that convert at higher rates</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-box">
+                                    <div class="stat-box-value">85%</div>
+                                    <div class="stat-box-description">Increase in qualified lead identification</div>
+                                </div>
+                            </div>
+                            <div class="solution-visual">
+                                <div class="assessment-box">
+                                    <div class="assessment-title">
+                                        <div class="assessment-icon"><i class="fas fa-chart-bar"></i></div>
+                                        <h4>Measure Your AI Readiness Score</h4>
+                                    </div>
+                                    
+                                    <div class="assessment-description">
+                                        See where you stand against industry benchmarks in just 5 minutes
+                                    </div>
+                                    
+                                    <div class="assessment-progress">
+                                        <div class="progress-item">
+                                            <span class="progress-label">Analyzing AI capabilities</span>
+                                            <span class="progress-spinner"><i class="fas fa-spinner fa-pulse"></i> Real-time analysis</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Identifying growth opportunities</span>
+                                            <span class="progress-value">88%</span>
+                                        </div>
+                                        <div class="progress-item">
+                                            <span class="progress-label">Get your personalized roadmap</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="ai-assessment.html" class="assessment-link cta-pulse">
+                                        <i class="fas fa-rocket"></i> Get Your AI Score Now
+                                    </a>
+                                    <div class="assessment-social-proof">
+                                        <span><i class="fas fa-check-circle"></i> 5,000+ organizations assessed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- CTA/Contact Section -->
+        <section class="cta-section" id="contact" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="section-intro fade-in">
+                    <div class="section-tag">Limited Time Offer</div>
+                    <h2>Get Your <span class="gradient-text">Free AI Strategy</span> (Worth $1,500)</h2>
+                    <p>For a limited time, I'm offering free personalized AI strategy sessions to qualified businesses. Only 5 spots available this week.</p>
+                </div>
+                
+                <div class="personalized-cta">
+                    <div class="cta-text-container">
+                        <h3 class="cta-title">In This 30-Minute Call, You'll Get:</h3>
+                        
+                        <div class="cta-benefits">
+                            <div class="cta-benefit">
+                                <div class="benefit-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                                <div class="benefit-text"><strong>Custom AI roadmap</strong> specific to your CX challenges and business goals</div>
+                            </div>
+                            <div class="cta-benefit">
+                                <div class="benefit-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                                <div class="benefit-text"><strong>2-3 immediate action items</strong> you can implement for quick wins (no technical knowledge required)</div>
+                            </div>
+                            <div class="cta-benefit">
+                                <div class="benefit-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                                <div class="benefit-text"><strong>ROI projection</strong> showing expected impact of AI implementation on your specific metrics</div>
+                            </div>
+                            <div class="cta-benefit">
+                                <div class="benefit-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+                                <div class="benefit-text"><strong>No obligation</strong> - get valuable insights whether you decide to work with us or not</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <div class="personal-touch-icon" aria-hidden="true">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h3>Claim Your Free Strategy Session</h3>
+                            <p style="color: #FF5555; font-weight: 600; margin-top: 0.5rem;">Only 5 spots left this week</p>
+                        </div>
+                        
+                        <form id="contact-form" class="contact-form" action="/success.html" method="post" data-netlify="true" name="strategy-call" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="strategy-call">
+                            <p style="display: none">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name<span class="required" aria-hidden="true">*</span></label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        placeholder="Enter your full name" 
+                                        required 
+                                        aria-required="true"
+                                    >
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email<span class="required" aria-hidden="true">*</span></label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        placeholder="Enter your work email" 
+                                        required 
+                                        aria-required="true"
+                                    >
+                                    <div class="error-message" aria-live="polite"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="company">Company Name<span class="required" aria-hidden="true">*</span></label>
+                                <input 
+                                    type="text" 
+                                    id="company" 
+                                    name="company" 
+                                    placeholder="Where do you work?" 
+                                    required 
+                                    aria-required="true"
+                                >
+                                <div class="error-message" aria-live="polite"></div>
+                            </div>
+                            
+                            <button type="submit" class="submit-button">Book My Free Strategy Session Now!</button>
+                            <p class="form-disclaimer">We'll respond within 12 hours to schedule your call. No credit card required.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section" id="newsletter">
+            <div class="container">
+                <div class="newsletter-container">
+                    <div class="newsletter-content">
+                        <div class="section-tag">Insider Insights</div>
+                        <h2>Stay Ahead of <span class="gradient-text">AI Trends</span></h2>
+                        <p>While everyone else is figuring out yesterday's AI tactics, get tomorrow's winning strategies delivered straight to your inbox.</p>
+                        <div class="insight-preview">
+                            <div class="insight-badge">Latest Issue</div>
+                            <h4>How Top Teams Are Automating Their Outreach in 2025</h4>
+                            <div class="insight-meta">
+                                <span><i class="far fa-clock"></i> 5-minute read</span>
+                                <span><i class="fas fa-fire"></i> 97% found this useful</span>
+                            </div>
+                        </div>
+                        <ul class="newsletter-benefits">
+                            <li><i class="fas fa-rocket"></i> <span>Weekly actionable strategies (not generic advice)</span></li>
+                            <li><i class="fas fa-lock"></i> <span>Private case studies not published elsewhere</span></li>
+                            <li><i class="fas fa-code"></i> <span>Ready-to-use prompt templates for your CX team</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="newsletter-form">
+                        <div class="newsletter-header">
+                            <div class="subscriber-avatar-group">
+                                <div class="subscriber-avatar" aria-hidden="true">JD</div>
+                                <div class="subscriber-avatar" aria-hidden="true">AM</div>
+                                <div class="subscriber-avatar" aria-hidden="true">TR</div>
+                                <div class="subscriber-count">+2,317</div>
+                            </div>
+                            <p class="join-others">Join CX leaders from Google, Salesforce, HubSpot and more</p>
+                        </div>
+                        <form class="signup-form" action="/success.html" method="post" data-netlify="true" name="newsletter-signup" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="newsletter-signup">
+                            <p style="display: none">
+                                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                            </p>
+                            <input type="email" name="email" placeholder="Your work email" required>
+                            <button type="submit" class="newsletter-button">
+                                <i class="fas fa-bolt"></i> <span class="newsletter-text-personalized">Get Insider AI Insights</span>
+                            </button>
+                        </form>
+                        <p class="newsletter-guarantee">One actionable email per week. Unsubscribe with one click.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <span>Clarity<span class="highlight">AI</span></span>
+                            <p>AI-Powered CX Solutions</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn Profile">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter Profile">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram Profile">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-sections">
+                        <div class="footer-section">
+                            <h4>Solutions</h4>
+                            <a href="#solutions">Agentic AI</a>
+                            <a href="#solutions">Workflow Automation</a>
+                            <a href="#solutions">Data Intelligence</a>
+                            <a href="#solutions">Lead Generation</a>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Company</h4>
+                            <a href="#founder-story">About Us</a>
+                            <a href="#results">Success Stories</a>
+                            <a href="#faqs">FAQs</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="footer-section">
+                            <h4>Resources</h4>
+                            <a href="#newsletter">AI Newsletter</a>
+                            <a href="ai-assessment.html">AI Assessment</a>
+                            <a href="#contact">Implementation Guide</a>
+                            <a href="#contact">CX Strategy Blog</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        © 2025 ClarityAI. All rights reserved.
+                    </div>
+                    <div class="footer-legal">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="refund.html">Refund Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js" defer></script>
+    
+    <!-- Netlify Integrations -->
+    <script src="js/netlify-integration.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Netlify's Form handling -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+    
+    <!-- Cache Clearing Script -->
+    <script src="js/cache-clear.js"></script>
+</body>
+</html>

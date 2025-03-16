@@ -1,0 +1,51 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill: #f5f7fa; stroke: #5d87ff; stroke-width: 2; }
+    .bar { fill: #5d87ff; opacity: 0.8; }
+    .bar-highlight { fill: #3366ff; }
+    .grid { stroke: #e0e6ed; stroke-width: 1; }
+    .text { font-family: 'Inter', sans-serif; font-size: 14px; fill: #333; }
+  </style>
+  
+  <!-- Background & Title -->
+  <rect width="800" height="400" fill="#f9fafc" rx="8" />
+  <text class="text" x="400" y="40" text-anchor="middle" font-size="18" font-weight="bold">Data Intelligence Visualization</text>
+  
+  <!-- Grid lines -->
+  <line class="grid" x1="100" y1="320" x2="700" y2="320" />
+  <line class="grid" x1="100" y1="270" x2="700" y2="270" />
+  <line class="grid" x1="100" y1="220" x2="700" y2="220" />
+  <line class="grid" x1="100" y1="170" x2="700" y2="170" />
+  <line class="grid" x1="100" y1="120" x2="700" y2="120" />
+  
+  <!-- Y-axis labels -->
+  <text class="text" x="90" y="325" text-anchor="end">0%</text>
+  <text class="text" x="90" y="275" text-anchor="end">25%</text>
+  <text class="text" x="90" y="225" text-anchor="end">50%</text>
+  <text class="text" x="90" y="175" text-anchor="end">75%</text>
+  <text class="text" x="90" y="125" text-anchor="end">100%</text>
+  
+  <!-- Bars -->
+  <rect class="bar" x="150" y="200" width="80" height="120" rx="4" />
+  <rect class="bar" x="250" y="150" width="80" height="170" rx="4" />
+  <rect class="bar-highlight" x="350" y="120" width="80" height="200" rx="4" />
+  <rect class="bar" x="450" y="170" width="80" height="150" rx="4" />
+  <rect class="bar" x="550" y="220" width="80" height="100" rx="4" />
+  
+  <!-- X-axis labels -->
+  <text class="text" x="190" y="350" text-anchor="middle">Raw Data</text>
+  <text class="text" x="290" y="350" text-anchor="middle">Processed</text>
+  <text class="text" x="390" y="350" text-anchor="middle">AI Enhanced</text>
+  <text class="text" x="490" y="350" text-anchor="middle">Validated</text>
+  <text class="text" x="590" y="350" text-anchor="middle">Actionable</text>
+  
+  <!-- Data points -->
+  <circle cx="190" cy="200" r="6" fill="#fff" stroke="#5d87ff" stroke-width="2" />
+  <circle cx="290" cy="150" r="6" fill="#fff" stroke="#5d87ff" stroke-width="2" />
+  <circle cx="390" cy="120" r="6" fill="#fff" stroke="#3366ff" stroke-width="2" />
+  <circle cx="490" cy="170" r="6" fill="#fff" stroke="#5d87ff" stroke-width="2" />
+  <circle cx="590" cy="220" r="6" fill="#fff" stroke="#5d87ff" stroke-width="2" />
+  
+  <!-- Connecting line -->
+  <polyline points="190,200 290,150 390,120 490,170 590,220" fill="none" stroke="#5d87ff" stroke-width="2" stroke-dasharray="5,5" />
+</svg> 
